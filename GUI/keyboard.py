@@ -21,12 +21,17 @@ class key_pad:
         #self.key_pad.attributes('-fullscreen', True) # fullscreen on touchscreen
         #size = str(self.w-300) + 'x' + str(self.h - 300)
         self.keypad.geometry('680x400')
+        self.keypad.transient(master)  # keep on top of parent
+        self.keypad.grab_set()  # make keypad modal so touches focus here
+        self.keypad.lift()
+        self.keypad.attributes('-topmost', True)
         
         keypad_frame = Frame(self.keypad)
         keypad_frame.grid(row = 0, column = 0, columnspan = 10, sticky = 'nsew')
         self.key = StringVar()
         key_entry = Entry(keypad_frame, textvariable =self.key, font = big_font, justify = CENTER, )
         key_entry.grid(row = 0, column = 0, sticky = 'nsew')
+        key_entry.focus_set()
         self.keypad.grid_columnconfigure((0,1,2,3,4,5,6,7,8,9), weight = 2)
         self.keypad.grid_rowconfigure((1,2,3,4), weight = 2)
         keypad_frame.grid_rowconfigure((0), weight = 1)

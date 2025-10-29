@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
+import tkinter as tk
 import matplotlib.pyplot
 from matplotlib.backends.backend_tkagg import (
     FigureCanvasTkAgg, NavigationToolbar2Tk)
@@ -366,7 +367,8 @@ class functions:
         except serial.serialutil.SerialException:
             self.battery_check_flag = False
             messagebox.showerror('Error', 'Spectrometer Not connected, Connect and restart')
-    
+
+
     def acquire_avg(self, pulses):
         self.battery_check_flag = True        
         (self.settings, self.wavelength) = self.settings_func.settings_read()

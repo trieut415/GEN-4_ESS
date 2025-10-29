@@ -11,7 +11,7 @@ class Settings:
         settings_open = open(self.settings_file, 'w', newline = '')
         csv_row = [('Settings', ''),('pulse',1),('pulse_rate',60),\
             ('integration_time',300),('dark_subtract',1),\
-            ('lamp_voltage',1000), ('autopulse_threshold',60000),\
+            ('lamp_voltage',600), ('autopulse_threshold',60000),\
             ('max_autopulse_number',10),('smoothing_half_width',2),\
             ('min_wavelength',300),('max_wavelength',900),\
             ('Number_of_Averages', 2), ('smoothing', 1),\
