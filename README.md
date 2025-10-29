@@ -17,9 +17,10 @@ This window should open up:
 ![Raspi-config](./Pictures/raspi-config.png)
 
 Navigate to `3. Interface Options`:
-and go to `P5. I2C`, and enable that. Then the next option you want to enable from the same `3. Interface Options` is `P6. Serial`. You don't want to enable the remote shell, just the serial interface. Picture shown below.
+- Go to `P5. I2C`, and enable that.
+- Then the next option you want to enable from the same `3. Interface Options` is `P6. Serial`. You don't want to enable the remote shell, just the serial interface. Picture shown below.
 
 ![Interface Options](./Pictures/interface-options.png) 
 
-
+Then it should prompt you to reboot, click yes. If not manually reboot.
 
