@@ -63,6 +63,7 @@ except:
 
 class Module_1:
     def __init__(self, master):
+        print("[Module_1] __init__ start")
         global settings_file
         self.root = master
         self.root.title("ESS System Interface")
@@ -88,6 +89,7 @@ class Module_1:
          
         # setup Serial port- 
          ## Graphing Frame and fake plot
+        print("[Module_1] Building graph frame and matplotlib canvas")
         self.graph_frame = Frame(self.root, background = "white")
         self.graph_frame.grid(row = 2, column = 0, columnspan = 7, padx = 1, pady = 3, sticky = sticky_to)
         
@@ -115,8 +117,10 @@ class Module_1:
             pass
         
         #(self.settings, self.wavelength) = settings_func.settings_read()
+        print("[Module_1] Creating functions helper")
         self.func = functions(self.root, self.canvas, self.fig)
         self.func.home()
+        print("[Module_1] Functions helper ready")
         
         module_button = Button(self.root, text = "Module 1: Scanning ESS", bg = 'sky blue', bd = 0, highlightthickness = 0, width = button_width, height = 7)
         module_button.grid(row = 0, column = 0, columnspan = 7, padx = 1, sticky = sticky_to)
@@ -156,16 +160,20 @@ class Module_1:
         # allow buttons and frames to resize with the resizing of the root window
         self.root.grid_columnconfigure((0,1,2,3,4,5,6),weight = 1)
         self.root.grid_rowconfigure((0,1,2),weight = 1)
+        print("[Module_1] Layout configuration complete")
+        print("[Module_1] __init__ complete")
         
         # show module connected
         #messagebox.showinfo('Module #','Module 1: ESS Scanning Module Connected')
         
     # allows for popup of settings window
     def window_popup(self, master):
+        print("[Module_1] Opening settings popup window")
         self.popup_window = Toplevel(master)
         self.sett_popup = settings_window.settings_popup_window(self.popup_window, master)
     
     def quit_button(self):
+        print("[Module_1] Quit button pressed - closing application")
         self.root.destroy()
         self.root.quit()
  
